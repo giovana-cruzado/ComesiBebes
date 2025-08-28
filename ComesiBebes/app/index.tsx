@@ -5,7 +5,7 @@ export default function Index() {
     <View
       style={{
         flex: 1,
-        marginTop: 60,
+        marginTop: 120,
         backgroundColor: '#adadad',
         
       }}
