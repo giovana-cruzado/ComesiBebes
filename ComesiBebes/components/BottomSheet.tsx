@@ -26,7 +26,7 @@ const BottomSheet = forwardRef<Ref>((props, ref) => {
       <TouchableOpacity style={[styles.toggleButton, styles.toggleActive]}>
          <Text style={styles.activeText}>Entrega</Text>  
       </TouchableOpacity>
-      <TouchableOpacity style={[styles.toggleButton, styles.toggleActive]}>
+      <TouchableOpacity style={[styles.toggleButton, styles.toggleInactive]}>
          <Text style={styles.inactiveText}>Retirada</Text>  
       </TouchableOpacity>
         </View>
@@ -50,7 +50,7 @@ const BottomSheet = forwardRef<Ref>((props, ref) => {
           </Link>
 
           <TouchableOpacity style={styles.button} onPress={ ()=> dismiss() }>
-            <Text>Confirmar</Text>
+            <Text style={styles.buttonText}>Confirmar</Text>
           </TouchableOpacity>
       </BottomSheetView>
     </BottomSheetModal>
@@ -61,8 +61,9 @@ export default BottomSheet
 
 const styles = StyleSheet.create({
   contentContainer: {
-    alignItems: 'center',
     height: '100%',
+    paddingHorizontal: 16,
+
   },
   toggle: {
     flexDirection: 'row',
@@ -77,5 +78,39 @@ const styles = StyleSheet.create({
   },
   toggleActive: {
     backgroundColor: Colors.primary,
+  },
+  activeText: {
+    color: '#fff',
+    fontWeight: '700',
+  },
+  toggleInactive: {},
+  inactiveText: {
+    color: Colors.primary,
+  },
+  subheader: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginBottom: 10,
+  },
+  item: {
+    flexDirection: 'row',
+    gap: 8,
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    padding: 16,
+    borderColor: Colors.grey,
+    borderWidth: 1,
+    marginBottom: 16,
+  },
+  button: {
+    backgroundColor: Colors.primary,
+    padding: 12,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
   },
 });
